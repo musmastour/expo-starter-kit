@@ -1,4 +1,4 @@
-import { Feather } from '@expo/vector-icons'
+import { Feather,  } from '@expo/vector-icons'
 import { createBottomTabNavigator, BottomTabNavigationOptions } from '@react-navigation/bottom-tabs'
 import { FC } from 'react'
 

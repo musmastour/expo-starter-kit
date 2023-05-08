@@ -1,4 +1,4 @@
-import { createStackNavigator } from '@react-navigation/stack'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { FC } from 'react'
 
 import { BottomTabNavigator } from './BottomTabNavigator'
@@ -12,7 +12,7 @@ import {
   SignUpScreen,
 } from '~screens'
 
-const { Navigator, Screen, Group } = createStackNavigator<RootStackParamList>()
+const { Navigator, Screen, Group } = createNativeStackNavigator<RootStackParamList>()
 
 export const RootNavigator: FC = () => {
   const { isSignedIn } = useAuth()
@@ -25,19 +25,32 @@ export const RootNavigator: FC = () => {
             name="SignIn"
             component={SignInScreen}
             options={{
+              headerShown: false,
               title: 'Sign in',
             }}
           />
           <Screen name="SignUp" component={SignUpScreen} />
         </Group>
       ) : (
-        <Group key="authorized">
-          <Screen name="MainTab" component={BottomTabNavigator} options={{ headerShown: false }} />
-          <Screen name="Settings" component={SettingsScreen} />
+        <Group key="authorized" screenOptions={{ headerLargeTitle: true }}>
+          <Screen
+            name="MainTab"
+            component={BottomTabNavigator}
+            options={{ headerTitle: 'Activité' }}
+          />
+          <Screen
+            name="Settings"
+            component={SettingsScreen}
+            options={{ headerTitle: 'Paramètres' }}
+          />
         </Group>
       )}
       <Group key="modals" screenOptions={{ presentation: 'modal' }}>
-        <Screen name="ApplicationInfo" component={ApplicationInfoScreen} />
+        <Screen
+          name="ApplicationInfo"
+          component={ApplicationInfoScreen}
+          options={{ headerTitle: 'Infos' }}
+        />
         <Screen name="NotFound" component={NotFoundScreen} />
       </Group>
     </Navigator>
