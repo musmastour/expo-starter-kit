@@ -7,15 +7,15 @@ import styles from './styles'
 
 import standardStyle from '~styles/standard'
 
-function SignInWithAppleButton({ onPress }: { onPress: () => void }) {
+function SignInWithGoogleButton({ onPress }: { onPress: () => void }) {
   return (
     <TouchableOpacity style={styles.button} onPress={onPress}>
-      <Icon name="apple" type="font-awesome" color={'white'} />
+      <Icon name="google" type="font-awesome" color={'white'} />
       <Text ml="3" fontSize={'lg'} color={'white'} style={standardStyle.subtitle}>
-        Connexion avec Apple
+        Connexion avec Google
       </Text>
     </TouchableOpacity>
   )
 }
 
-export default SignInWithAppleButton
+export default SignInWithGoogleButton

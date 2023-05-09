@@ -21,14 +21,7 @@ export const RootNavigator: FC = () => {
     <Navigator>
       {!isSignedIn ? (
         <Group key="unauthorized">
-          <Screen
-            name="SignIn"
-            component={SignInScreen}
-            options={{
-              headerShown: false,
-              title: 'Sign in',
-            }}
-          />
+          <Screen name="SignIn" component={SignInScreen} options={{ headerShown: false }} />
           <Screen name="SignUp" component={SignUpScreen} />
         </Group>
       ) : (

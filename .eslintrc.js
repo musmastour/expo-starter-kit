@@ -29,7 +29,6 @@ module.exports = {
     '@typescript-eslint/no-redeclare': ['error'],
     'react-native/no-single-element-style-arrays': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
-    'react/jsx-no-bind': ['warn'],
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
   },

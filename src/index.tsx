@@ -6,9 +6,11 @@ import '~i18n'
 
 import { BottomSheetModalProvider } from '@gorhom/bottom-sheet'
 import { registerRootComponent } from 'expo'
+import { NativeBaseProvider } from 'native-base'
 import { QueryClientProvider, QueryClient } from 'react-query'
 
 import { AppLoading } from '~components'
+import { useFonts } from '~hooks'
 import { Navigation } from '~navigation'
 import { AuthProvider, SafeAreaProvider } from '~providers'
 import { ColorSchemeProvider } from '~providers/ColorSchemeProvider'
@@ -24,19 +26,27 @@ if (DISABLE_CONSOLE_ENABLE_MOCKED_SERVER) {
 const queryClient = new QueryClient({})
 
 const App = (): JSX.Element => {
+  useFonts({
+    SpaceGrotesk: require('../assets/fonts/SpaceGrotesk.ttf'),
+    SpaceGroteskMedium: require('../assets/fonts/SpaceGrotesk-Medium.otf'),
+    SpaceGroteskBold: require('../assets/fonts/SpaceGrotesk-SemiBold.otf'),
+  })
+
   return (
     <SafeAreaProvider>
-      <QueryClientProvider client={queryClient}>
-        <AuthProvider>
-          <AppLoading>
-            <ColorSchemeProvider>
-              <BottomSheetModalProvider>
-                <Navigation />
-              </BottomSheetModalProvider>
-            </ColorSchemeProvider>
-          </AppLoading>
-        </AuthProvider>
-      </QueryClientProvider>
+      <NativeBaseProvider>
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>
+            <AppLoading>
+              <ColorSchemeProvider>
+                <BottomSheetModalProvider>
+                  <Navigation />
+                </BottomSheetModalProvider>
+              </ColorSchemeProvider>
+            </AppLoading>
+          </AuthProvider>
+        </QueryClientProvider>
+      </NativeBaseProvider>
     </SafeAreaProvider>
   )
 }
