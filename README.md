@@ -5,11 +5,6 @@ This is a template to be used with expo. It includes all the necessary stuff to 
 Version in the `package.json` is one to one the latest expo on which the template was tested.
 
 ## Features
-
-[![MIT License](https://img.shields.io/npm/types/@kacgrzes/expo-template?style=flat-square)](https://img.shields.io/npm/types/@kacgrzes/expo-template?style=flat-square)
-[![MIT License](https://img.shields.io/github/package-json/dependency-version/kacgrzes/expo-typescript-template/expo?style=flat-square)](https://img.shields.io/github/package-json/dependency-version/kacgrzes/expo-typescript-template/expo?style=flat-square)
-[![MIT License](https://img.shields.io/github/package-json/dependency-version/kacgrzes/expo-typescript-template/@react-navigation/native?style=flat-square)](https://img.shields.io/github/package-json/dependency-version/kacgrzes/expo-typescript-template/@react-navigation/native?style=flat-square)
-
 - Expo
 - React Query
 - React Navigation
@@ -25,7 +20,6 @@ Version in the `package.json` is one to one the latest expo on which the templat
   - right now it has simple signIn/signOut flow
 - prettier
 - babel-module-resolver
-- tests with jest and @testing-library/react-native
 
 ## Run Locally
 
@@ -52,11 +46,6 @@ Start the expo server
 ```bash
   yarn start
 ```
-
-## License
-
-[MIT](https://choosealicense.com/licenses/mit/)
-
 ## Feedback
 
 If you have any feedback, please reach out to me at kacgrzes@gmail.com
